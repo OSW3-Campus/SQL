@@ -1,0 +1,105 @@
+Créer une table
+> Nom de la table 
+> Charset
+
+Créer les colones
+- Colone de clé primaire "id"
+> Nom : id
+> Options* : PK NN
+
+
+Légende des options:
+---------
+PK - Primary Key : Clé primaire
+NN - Not Null 
+UQ - UniQue : La valeur doit etre unique
+BIN - BINary : Données Binaire
+UN - UNsigned
+ZF - ZeroFill
+AI - AutoIncrement
+
+CRUD
+
+Create
+----------
+Ajoute une donnée dans la table
+
+Requête:
+INSERT INTO `nom_de_la_table` (`colone_1`, `colone_2`) VALUES ('valeur_1', 'valeur_2');
+
+Exemple:
+INSERT INTO `cars` (`brand`) VALUES ('Ford');
+
+
+Retrieve / Read
+----------
+Récupèrer les données dans la table
+
+Requête:
+SELECT * FROM `nom_de_la_table`;
+Cette requête récupère toutes les colones de la table
+
+SELECT `colone_1` FROM `nom_de_la_table`;
+Cette requête récupère la colone "colone_1" de la table
+
+SELECT `colone_2`, `colone_1` FROM `nom_de_la_table`;
+Cette requête récupère les colones "colone_2" et "colone_1" de la table
+
+Exemple:
+SELECT `brand` FROM `cars`;
+
+
+
+Update
+----------
+Met à jour les données de la table
+
+Requête
+UPDATE `nom_de_la_table` SET `colone_1`="Nouvelle valeur"
+
+Exemple
+UPDATE `cars` SET `brand`='Dodge'
+
+Update ... Where 
+---------
+Met à jour une donnée de la table
+
+Requête 
+UPDATE `nom_de_la_table` SET `colone_2`="Nouvelle Valeur" WHERE `colone_1`="valeur"
+
+Exemple
+UPDATE `cars` SET `brand`='Mercedes' WHERE `id`=11
+
+
+Delete 
+----------
+Supprime les données d'une table
+
+Requête:
+DELETE FROM `nom_de_la_table`
+
+Exemple
+DELETE FROM `cars`
+
+Delete ... Where
+---
+Supprime une ligne de la table
+
+Requête
+DELETE FROM `nom_de_la_table` WHERE `colone_1`="valeur"
+
+Exemple
+DELETE FROM `cars` WHERE `id`='2'
+
+
+
+
+================================================================================
+
+
+TRUNCATE
+----------
+Reset total de la table, Supprime les données ET les index
+
+Requête:
+TRUNCATE `nom_de_la_table`
